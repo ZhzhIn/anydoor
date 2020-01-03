@@ -48,6 +48,15 @@ public class TestWechat {
 //        System.out.println(token);
     }
     @Test
+    public void departList(){
+        given()
+                .queryParam("access_token",token)
+                .queryParam("id",parentDepartId)
+                .when()
+                .get("https://qyapi.weixin.qq.com/cgi-bin/department/list")
+                .then()
+    }
+    @Test
     public void departmentDelete(){}
     @Test
     public void departmentUpdate(){}
