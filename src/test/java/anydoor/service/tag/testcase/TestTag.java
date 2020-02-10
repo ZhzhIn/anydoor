@@ -1,8 +1,7 @@
-package anydoor.service.department.testcase;
+package anydoor.service.tag.testcase;
 
 import anydoor.service.WechatConfig;
-import anydoor.service.department.api.Department;
-import anydoor.service.department.api.Tag;
+import anydoor.service.tag.api.Tag;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

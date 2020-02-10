@@ -1,4 +1,4 @@
-package anydoor.service.department.api;
+package anydoor.service.tag.api;
 
 import anydoor.service.WechatConfig;
 import io.restassured.http.ContentType;
