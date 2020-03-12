@@ -16,9 +16,11 @@ public class ReferenceTransferTest
 //        System.out.println(dw.hashCode());
     }
     @Test
+
+
+
     public  void main()
     {
-        //
         DataWrap dw = new DataWrap();
         System.out.println(dw.hashCode()+"----1");
         dw.a = 6;
@@ -29,6 +31,8 @@ public class ReferenceTransferTest
                 + dw.a + "；b成员变量的值是" + dw.b);
     }
 }
+
+//
 class DataWrap
 {
     int a;
