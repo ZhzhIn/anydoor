@@ -18,6 +18,7 @@ public class ReferenceTransferTest
     @Test
     public  void main()
     {
+        //
         DataWrap dw = new DataWrap();
         System.out.println(dw.hashCode()+"----1");
         dw.a = 6;
