@@ -2,20 +2,14 @@ package anydoor.service.department.testcase;
 
 import anydoor.service.WechatConfig;
 import anydoor.service.department.api.Department;
-import io.restassured.RestAssured;
-import io.restassured.common.mapper.TypeRef;
-import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.hasItem;
 
@@ -43,6 +37,8 @@ public class TestDepartment {
     public void testcase(){}
     @Test
     @Order(1)
+    @DisplayName("添加部门")
+    @Severity(SeverityLevel.MINOR)
     public void testDepCreate(){
        department.depCreate(newDepName,parentDepartId)
             .then()
