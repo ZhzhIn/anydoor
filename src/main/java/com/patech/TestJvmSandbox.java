@@ -10,7 +10,9 @@ class MathMethod {
     public void testException() {
         throw new ArithmeticException("error");
     }
-
+    public void testOutput(){
+        System.out.println("hello");
+    }
 }
 
 public class TestJvmSandbox {
@@ -20,6 +22,7 @@ public class TestJvmSandbox {
             try {
                 mm.testException();
                 mm.testExceptionNum(1, 0);
+                mm.testOutput();
             } catch (Throwable e) {
                 e.printStackTrace();
             }
