@@ -82,11 +82,17 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
                 <configuration>
+                    <!--参考：https://stackoverflow.com/questions/31383380/exclude-folder-in-jacoco-coverage-report-->
+                    <includes>
+                        <include>**/NumDivide.*</include>
+                    </includes>
                     <excludes>
-                        <exclude>com.patech.TestJvmSandbox</exclude>
+                        <exclude>**/MathMethod.*</exclude>
+                        <exclude>**/TestJvmSandbox.*</exclude>
                     </excludes>
                     <rules>
                         <rule>
+
                             <element>CLASS</element>
                             <limits>
                                 <limit>
@@ -137,14 +143,14 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--Run the JUnit unit tests in an isolated classloader.-->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
-                        ${surefireArgLine}
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        ${surefireArgLine} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <properties>
                         <property>
@@ -190,7 +196,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!--打main jar包-->
+            <!--打main jar包，用来给jvmsandbox打补丁-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
