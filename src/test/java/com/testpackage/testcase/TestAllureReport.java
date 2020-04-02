@@ -14,13 +14,13 @@ public class TestAllureReport {
     @Link("http://testerhome.com")
     @Issue("110")
     void test() throws FileNotFoundException {
-        try{
+        /*try{
         Allure.addAttachment("picture","image/png",
                new FileInputStream("C:\\Users\\yindongzi\\Desktop\\20200317170224.png"),
                 ".png");
         }catch (FileNotFoundException e){
             e.printStackTrace();
-        }
+        }*/
     }
     @Test
     void testStep(){
