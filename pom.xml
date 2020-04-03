@@ -84,7 +84,7 @@
                 <configuration>
                     <!--参考：https://stackoverflow.com/questions/31383380/exclude-folder-in-jacoco-coverage-report-->
                     <includes>
-                        <include>**/NumDivide.*</include>
+                       <!-- <include>**/NumDivide.*</include>-->
                     </includes>
                     <excludes>
                         <exclude>**/MathMethod.*</exclude>
@@ -150,7 +150,7 @@
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
-                        ${surefireArgLine} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        @{surefireArgLine} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <properties>
                         <property>
